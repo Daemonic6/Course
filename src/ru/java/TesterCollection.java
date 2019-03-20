@@ -1,7 +1,7 @@
 package ru.java;
 public class TesterCollection {
 
-    public void testCollection(ICollection<String> list) {
+    public void testCollection(ICollection list) {
         list.add("Sambuca");
         list.add("Abscent");
         list.add("Beer");
