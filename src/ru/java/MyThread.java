@@ -3,9 +3,9 @@ package ru.java;
 public class MyThread implements Runnable {
     public static void main(String[] args) {
         System.out.println("Main thread started...");
-        new ru.java.JThread("JThread").start();
+        new JThread("JThread").start();
         for (int i = 1; i < 6; i++) {
-            new ru.java.JThread("JThread " + i).start();
+            new JThread("JThread " + i).start();
             System.out.println("Main thread finished...");
         }
     }

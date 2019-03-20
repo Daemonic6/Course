@@ -1,4 +1,4 @@
-package  ru.java;
+package ru.java;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -9,6 +9,7 @@ public class Part2 {
 
     public void main() {
         TimerTask tt = new TimerTask() {
+
             @Override
             public void run() {
                 try {

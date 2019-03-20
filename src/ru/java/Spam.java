@@ -35,7 +35,6 @@ public class Spam extends Thread {
 
         Thread thread;
 
-
         public static final InputStream IN_DEFAULT = System.in;
 
 
@@ -49,17 +48,20 @@ public class Spam extends Thread {
         public void run() {
             try {
                 while (true) {
+                    Thread.sleep(1000);
                     if (System.in.available() > 0 && System.in.read() == '\n') {
                         System.setIn(IN_DEFAULT);
                         thread.interrupt();
                     }
                 }
             } catch (IOException e) {
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int[] latency = { 1500, 1500, 1500, 1500, 1500, 1500 };
         String[] messages = { "First", "Second", "Third", "Fourth", "Fifth", "Sixth" };
         Thread spam = new Spam(latency, messages);
